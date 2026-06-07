@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News Intelligence Report</title>
+  <style>
+    :root {
+      --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
+      --accent: #38bdf8; --accent2: #818cf8; --text: #f1f5f9;
+      --muted: #94a3b8; --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; padding: 2rem; }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+    header h1 { font-size: 2rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    header p { color: var(--muted); margin-top: .4rem; }
+    .stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; min-width: 140px; }
+    .stat-box .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+    .stat-box .label { color: var(--muted); font-size: .85rem; margin-top: .2rem; }
+    .badge { display: inline-block; background: var(--surface2); border-radius: 999px; padding: .25rem .75rem; font-size: .8rem; margin: .2rem; }
+    .kw-tag { display: inline-block; background: #1e3a5f; color: var(--accent); border-radius: 6px; padding: .2rem .6rem; font-size: .8rem; margin: .2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent2); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; transition: border-color .2s; }
+    .card:hover { border-color: var(--accent); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .6rem; }
+    .source-label { font-size: .75rem; background: var(--surface2); padding: .15rem .5rem; border-radius: 4px; color: var(--muted); }
+    .score { font-size: .8rem; font-weight: 600; }
+    .card h3 { font-size: .95rem; margin-bottom: .4rem; line-height: 1.4; }
+    .card h3 a { color: var(--text); text-decoration: none; }
+    .card h3 a:hover { color: var(--accent); }
+    .meta { font-size: .78rem; color: var(--muted); margin-bottom: .5rem; }
+    .summary { font-size: .83rem; color: #cbd5e1; line-height: 1.5; margin-bottom: .6rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .7rem; }
+    .tag { font-size: .7rem; background: #1e3a5f; color: var(--accent); padding: .1rem .45rem; border-radius: 4px; }
+    .relevance-bar { height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+    .relevance-fill { height: 100%; border-radius: 2px; }
+    table { width: 100%; border-collapse: collapse; font-size: .83rem; margin-top: .5rem; }
+    th { background: var(--surface2); color: var(--muted); padding: .6rem .8rem; text-align: left; position: sticky; top: 0; }
+    td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
+    td a { color: var(--accent); text-decoration: none; }
+    td a:hover { text-decoration: underline; }
+    .table-wrap { overflow-x: auto; background: var(--surface); border-radius: 12px; border: 1px solid var(--border); }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📰 News Intelligence Report</h1>
+    <p>Generated 2026-06-07 23:47 &nbsp;·&nbsp; Keywords: artificial intelligence</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat-box"><div class="num">20</div><div class="label">Total Articles</div></div>
+    <div class="stat-box"><div class="num">2</div><div class="label">Sources</div></div>
+    <div class="stat-box"><div class="num">1</div><div class="label">Keywords</div></div>
+    <div class="stat-box"><div class="num">66%</div><div class="label">Avg Relevance</div></div>
+  </div>
+
+  <div><span class="badge">arXiv <strong>10</strong></span><span class="badge">Hacker News <strong>10</strong></span></div>
+  <div style="margin-top:.8rem"><span class="kw-tag">artificial intelligence (20)</span></div>
+
+  <h2>🏆 Top 10 Articles by Relevance</h2>
+  <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">100% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2104.13155v2" target="_blank" rel="noopener">Watershed of Artificial Intelligence: Human Intelligence, Machine Intelligence, and Biological Intelligence</a></h3>
+          <p class="meta">
+            By Li Weigang, Liriam Enamoto, Denise Leyi Li · 27 Apr 2021
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">This article reviews the "Once learning" mechanism that was proposed 23 years ago and the subsequent successes of "One-shot learning" in image classification and "You Only Look Once - YOLO" in objecti...</p>
+          <div class="tags"><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:100%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">100% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2304.13269v4" target="_blank" rel="noopener">Games for Artificial Intelligence Research: A Review and Perspectives</a></h3>
+          <p class="meta">
+            By Chengpeng Hu, Yunlong Zhao, Ziqi Wang · 26 Apr 2023
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">Games have been the perfect test-beds for artificial intelligence research for the characteristics that widely exist in real-world scenarios. Learning and optimisation, decision making in dynamic and ...</p>
+          <div class="tags"><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:100%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">100% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/1703.06597v1" target="_blank" rel="noopener">Artificial Intelligence and Economic Theories</a></h3>
+          <p class="meta">
+            By Tshilidzi Marwala, Evan Hurwitz · 20 Mar 2017
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">The advent of artificial intelligence has changed many disciplines such as engineering, social science and economics. Artificial intelligence is a computational technique which is inspired by natural ...</p>
+          <div class="tags"><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:100%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">90% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2110.01831v1" target="_blank" rel="noopener">The Artificial Scientist: Logicist, Emergentist, and Universalist Approaches to Artificial General Intelligence</a></h3>
+          <p class="meta">
+            By Michael Timothy Bennett, Yoshihiro Maruyama · 05 Oct 2021
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">We attempt to define what is necessary to construct an Artificial Scientist, explore and evaluate several approaches to artificial general intelligence (AGI) which may facilitate this, conclude that a...</p>
+          <div class="tags"><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:90%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">87% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2110.01835v1" target="_blank" rel="noopener">Compression, The Fermi Paradox and Artificial Super-Intelligence</a></h3>
+          <p class="meta">
+            By Michael Timothy Bennett · 05 Oct 2021
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">The following briefly discusses possible difficulties in communication with and control of an AGI (artificial general intelligence), building upon an explanation of The Fermi Paradox and preceding wor...</p>
+          <div class="tags"><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:87%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">84% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2304.04780v1" target="_blank" rel="noopener">A Review on Explainable Artificial Intelligence for Healthcare: Why, How, and When?</a></h3>
+          <p class="meta">
+            By Subrato Bharati, M. Rubaiyat Hossain Mondal, Prajoy Podder · 10 Apr 2023
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">Artificial intelligence (AI) models are increasingly finding applications in the field of medicine. Concerns have been raised about the explainability of the decisions that are made by these AI models...</p>
+          <div class="tags"><span class="tag">cs.LG</span><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:84%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">78% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/1301.2158v1" target="_blank" rel="noopener">Artificial Intelligence Framework for Simulating Clinical Decision-Making: A Markov Decision Process Approach</a></h3>
+          <p class="meta">
+            By Casey C. Bennett, Kris Hauser · 10 Jan 2013
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">In the modern healthcare system, rapidly expanding costs/complexity, the growing myriad of treatment options, and exploding information streams that often do not effectively reach the front lines hind...</p>
+          <div class="tags"><span class="tag">cs.AI</span><span class="tag">stat.ML</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:78%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">76% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2410.11896v1" target="_blank" rel="noopener">Study on the Helpfulness of Explainable Artificial Intelligence</a></h3>
+          <p class="meta">
+            By Tobias Labarta, Elizaveta Kulicheva, Ronja Froelian · 14 Oct 2024
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">Explainable Artificial Intelligence (XAI) is essential for building advanced machine learning-powered applications, especially in critical domains such as medical diagnostics or autonomous driving. Le...</p>
+          <div class="tags"><span class="tag">cs.HC</span><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:76%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">75% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2103.06769v1" target="_blank" rel="noopener">Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments</a></h3>
+          <p class="meta">
+            By Manfred Eppe, Pierre-Yves Oudeyer · 11 Mar 2021
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary">This paper outlines a perspective on the future of AI, discussing directions for machines models of human-like intelligence. We explain how developmental and evolutionary theories of human cognition s...</p>
+          <div class="tags"><span class="tag">cs.AI</span><span class="tag">cs.CL</span><span class="tag">cs.LG</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:75%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">Hacker News</span>
+            <span class="score" style="color:#f59e0b">50% relevant</span>
+          </div>
+          <h3><a href="https://www.facebook.com/100006735798590/posts/2547632585471243/" target="_blank" rel="noopener">John Carmack: I’m going to work on artificial general intelligence</a></h3>
+          <p class="meta">
+            By jbredeche · 13 Nov 2019
+             · keyword: <em>artificial intelligence</em>
+          </p>
+          <p class="summary"></p>
+          <div class="tags"><span class="tag">tech</span><span class="tag">hacker-news</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:50%; background:#f59e0b"></div>
+          </div>
+        </div>
+        </div>
+
+  <h2>📋 Full Results Table</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Title</th><th>Source</th><th>Keyword</th><th>Published</th><th>Author</th><th>Relevance</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2104.13155v2" target="_blank">Watershed of Artificial Intelligence: Human Intelligence, Machine Intelligence, </a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>27 Apr 2021</td>
+          <td>Li Weigang, Liriam Enamoto, Denise Leyi </td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2304.13269v4" target="_blank">Games for Artificial Intelligence Research: A Review and Perspectives</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>26 Apr 2023</td>
+          <td>Chengpeng Hu, Yunlong Zhao, Ziqi Wang</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/1703.06597v1" target="_blank">Artificial Intelligence and Economic Theories</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>20 Mar 2017</td>
+          <td>Tshilidzi Marwala, Evan Hurwitz</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2110.01831v1" target="_blank">The Artificial Scientist: Logicist, Emergentist, and Universalist Approaches to </a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>05 Oct 2021</td>
+          <td>Michael Timothy Bennett, Yoshihiro Maruy</td>
+          <td>90%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2110.01835v1" target="_blank">Compression, The Fermi Paradox and Artificial Super-Intelligence</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>05 Oct 2021</td>
+          <td>Michael Timothy Bennett</td>
+          <td>87%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2304.04780v1" target="_blank">A Review on Explainable Artificial Intelligence for Healthcare: Why, How, and Wh</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>10 Apr 2023</td>
+          <td>Subrato Bharati, M. Rubaiyat Hossain Mon</td>
+          <td>84%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/1301.2158v1" target="_blank">Artificial Intelligence Framework for Simulating Clinical Decision-Making: A Mar</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>10 Jan 2013</td>
+          <td>Casey C. Bennett, Kris Hauser</td>
+          <td>78%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2410.11896v1" target="_blank">Study on the Helpfulness of Explainable Artificial Intelligence</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>14 Oct 2024</td>
+          <td>Tobias Labarta, Elizaveta Kulicheva, Ron</td>
+          <td>76%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2103.06769v1" target="_blank">Intelligent behavior depends on the ecological niche: Scaling up AI to human-lik</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>11 Mar 2021</td>
+          <td>Manfred Eppe, Pierre-Yves Oudeyer</td>
+          <td>75%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.facebook.com/100006735798590/posts/2547632585471243/" target="_blank">John Carmack: I’m going to work on artificial general intelligence</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>13 Nov 2019</td>
+          <td>jbredeche</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.theatlantic.com/philosophy/2026/06/no-artificial-intelligence-is-not-conscious/687378/" target="_blank">Artificial intelligence is not conscious – Ted Chiang</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>03 Jun 2026</td>
+          <td>lordleft</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.reuters.com/article/us-usa-artificial-intelligence/u-s-government-limits-exports-of-artificial-intelligence-software-idUSKBN1Z21PT" target="_blank">U.S. government limits exports of artificial intelligence software</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>04 Jan 2020</td>
+          <td>ckcheng</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.economist.com/finance-and-economics/2024/08/19/artificial-intelligence-is-losing-hype" target="_blank">Artificial intelligence is losing hype</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>20 Aug 2024</td>
+          <td>bx376</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.nytimes.com/2018/10/15/technology/mit-college-artificial-intelligence.html" target="_blank">M.I.T. Plans College for Artificial Intelligence, Backed by $1B</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>15 Oct 2018</td>
+          <td>superfx</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/lecture-videos/" target="_blank">Artificial Intelligence Lecture Videos</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>08 Oct 2016</td>
+          <td>BucketSort</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.cs.cmu.edu/news/carnegie-mellon-launches-undergraduate-degree-artificial-intelligence" target="_blank">Carnegie Mellon Launches Undergraduate Degree in Artificial Intelligence</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>10 May 2018</td>
+          <td>e15ctr0n</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.bmj.com/content/374/bmj.n1872" target="_blank">Use of artificial intelligence for image analysis in breast cancer screening</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>02 Sep 2021</td>
+          <td>cratermoon</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="http://acuman.us/" target="_blank">Show HN: I'm a 14 year-old dev who has programmed an artificial intelligence bot</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>16 Apr 2015</td>
+          <td>seanlevan</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://docs.google.com/presentation/d/119VW6ueBGLQXsw-jGMboGP2-WuOnyMAOYLgd44SL6xM/edit#slide=id.p" target="_blank">Where will artificial general intelligence come from?</a></td>
+          <td>Hacker News</td>
+          <td>artificial intelligence</td>
+          <td>02 Sep 2017</td>
+          <td>nshr</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2204.10358v1" target="_blank">Creative Problem Solving in Artificially Intelligent Agents: A Survey and Framew</a></td>
+          <td>arXiv</td>
+          <td>artificial intelligence</td>
+          <td>21 Apr 2022</td>
+          <td>Evana Gizzi, Lakshmi Nair, Sonia Chernov</td>
+          <td>37%</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <footer>
+    News Intelligence Scraper &nbsp;·&nbsp; Built with Python, requests &amp; BeautifulSoup
+  </footer>
+</body>
+</html>

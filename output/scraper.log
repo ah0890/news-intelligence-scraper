@@ -57,3 +57,30 @@
 [2026-06-07 23:29:41] INFO     scraper.bbc_news —   [ok] 0 articles found in 2.2s
 [2026-06-07 23:29:42] WARNING  scraper.bbc_news — BBC: No articles parsed — site structure may have changed.
 [2026-06-07 23:29:42] INFO     scraper.bbc_news —   [ok] 0 articles found in 1.9s
+[2026-06-07 23:45:29] INFO     orchestrator — Starting scrape — 1 keyword(s) × 3 source(s)
+[2026-06-07 23:45:29] INFO     scraper.hacker_news — Scraping 'artificial intelligence' from Hacker News ...
+[2026-06-07 23:45:29] INFO     scraper.arxiv — Scraping 'artificial intelligence' from arXiv ...
+[2026-06-07 23:45:29] INFO     scraper.bbc_news — Scraping 'artificial intelligence' from BBC News ...
+[2026-06-07 23:45:30] INFO     scraper.arxiv —   [ok] 10 articles found in 1.2s
+[2026-06-07 23:45:30] WARNING  scraper.bbc_news — BBC: No articles parsed — site structure may have changed.
+[2026-06-07 23:45:30] INFO     scraper.bbc_news —   [ok] 0 articles found in 1.7s
+[2026-06-07 23:45:31] INFO     scraper.hacker_news —   [ok] 10 articles found in 2.1s
+[2026-06-07 23:45:32] INFO     orchestrator — De-duplicated: 20 -> 20 articles
+[2026-06-07 23:45:32] INFO     orchestrator — Total articles collected: 20
+[2026-06-07 23:45:32] INFO     exporter — CSV saved -> C:\Users\amjad\Projects\news-intelligence-scraper\output\raw\articles_20260607_234532.csv (20 rows)
+[2026-06-07 23:45:32] INFO     exporter — JSON saved -> C:\Users\amjad\Projects\news-intelligence-scraper\output\raw\articles_20260607_234532.json (20 records)
+[2026-06-07 23:47:22] INFO     orchestrator — Starting scrape — 1 keyword(s) × 3 source(s)
+[2026-06-07 23:47:22] INFO     scraper.hacker_news — Scraping 'artificial intelligence' from Hacker News ...
+[2026-06-07 23:47:22] INFO     scraper.arxiv — Scraping 'artificial intelligence' from arXiv ...
+[2026-06-07 23:47:22] INFO     scraper.bbc_news — Scraping 'artificial intelligence' from BBC News ...
+[2026-06-07 23:47:23] INFO     scraper.arxiv —   [ok] 10 articles found in 0.9s
+[2026-06-07 23:47:23] INFO     scraper.hacker_news —   [ok] 10 articles found in 1.3s
+[2026-06-07 23:47:23] WARNING  scraper.bbc_news — BBC: No articles parsed — site structure may have changed.
+[2026-06-07 23:47:23] INFO     scraper.bbc_news —   [ok] 0 articles found in 1.5s
+[2026-06-07 23:47:25] INFO     orchestrator — De-duplicated: 20 -> 20 articles
+[2026-06-07 23:47:25] INFO     orchestrator — Total articles collected: 20
+[2026-06-07 23:47:25] INFO     exporter — CSV saved -> C:\Users\amjad\Projects\news-intelligence-scraper\output\raw\articles_20260607_234725.csv (20 rows)
+[2026-06-07 23:47:25] INFO     exporter — JSON saved -> C:\Users\amjad\Projects\news-intelligence-scraper\output\raw\articles_20260607_234725.json (20 records)
+[2026-06-07 23:47:25] INFO     exporter — Excel saved -> C:\Users\amjad\Projects\news-intelligence-scraper\output\raw\articles_20260607_234725.xlsx
+[2026-06-07 23:47:25] INFO     exporter — HTML report saved -> C:\Users\amjad\Projects\news-intelligence-scraper\output\reports\report_20260607_234725.html
+[2026-06-07 23:47:25] INFO     main — Total time: 3.4s
