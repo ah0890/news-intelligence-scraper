@@ -1,0 +1,18 @@
+# News Intelligence Scraper — Python dependencies
+# Install: pip install -r requirements.txt
+
+# HTTP & HTML parsing
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.1.0          # fast HTML/XML parser used by BeautifulSoup
+
+# Data export
+pandas>=2.2.0
+openpyxl>=3.1.2      # Excel .xlsx support for pandas
+
+# Dev / testing
+pytest>=8.0.0
+pytest-cov>=5.0.0
+
+# Optional: uncomment if you want to add Playwright for JS-heavy sites
+# playwright>=1.44.0
