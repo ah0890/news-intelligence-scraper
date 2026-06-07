@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News Intelligence Report</title>
+  <style>
+    :root {
+      --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
+      --accent: #38bdf8; --accent2: #818cf8; --text: #f1f5f9;
+      --muted: #94a3b8; --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; padding: 2rem; }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+    header h1 { font-size: 2rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    header p { color: var(--muted); margin-top: .4rem; }
+    .stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; min-width: 140px; }
+    .stat-box .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+    .stat-box .label { color: var(--muted); font-size: .85rem; margin-top: .2rem; }
+    .badge { display: inline-block; background: var(--surface2); border-radius: 999px; padding: .25rem .75rem; font-size: .8rem; margin: .2rem; }
+    .kw-tag { display: inline-block; background: #1e3a5f; color: var(--accent); border-radius: 6px; padding: .2rem .6rem; font-size: .8rem; margin: .2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent2); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; transition: border-color .2s; }
+    .card:hover { border-color: var(--accent); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .6rem; }
+    .source-label { font-size: .75rem; background: var(--surface2); padding: .15rem .5rem; border-radius: 4px; color: var(--muted); }
+    .score { font-size: .8rem; font-weight: 600; }
+    .card h3 { font-size: .95rem; margin-bottom: .4rem; line-height: 1.4; }
+    .card h3 a { color: var(--text); text-decoration: none; }
+    .card h3 a:hover { color: var(--accent); }
+    .meta { font-size: .78rem; color: var(--muted); margin-bottom: .5rem; }
+    .summary { font-size: .83rem; color: #cbd5e1; line-height: 1.5; margin-bottom: .6rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .7rem; }
+    .tag { font-size: .7rem; background: #1e3a5f; color: var(--accent); padding: .1rem .45rem; border-radius: 4px; }
+    .relevance-bar { height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+    .relevance-fill { height: 100%; border-radius: 2px; }
+    table { width: 100%; border-collapse: collapse; font-size: .83rem; margin-top: .5rem; }
+    th { background: var(--surface2); color: var(--muted); padding: .6rem .8rem; text-align: left; position: sticky; top: 0; }
+    td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
+    td a { color: var(--accent); text-decoration: none; }
+    td a:hover { text-decoration: underline; }
+    .table-wrap { overflow-x: auto; background: var(--surface); border-radius: 12px; border: 1px solid var(--border); }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📰 News Intelligence Report</h1>
+    <p>Generated 2026-06-07 23:27 &nbsp;·&nbsp; Keywords: machine learning</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat-box"><div class="num">20</div><div class="label">Total Articles</div></div>
+    <div class="stat-box"><div class="num">2</div><div class="label">Sources</div></div>
+    <div class="stat-box"><div class="num">1</div><div class="label">Keywords</div></div>
+    <div class="stat-box"><div class="num">65%</div><div class="label">Avg Relevance</div></div>
+  </div>
+
+  <div><span class="badge">arXiv <strong>10</strong></span><span class="badge">Hacker News <strong>10</strong></span></div>
+  <div style="margin-top:.8rem"><span class="kw-tag">machine learning (20)</span></div>
+
+  <h2>🏆 Top 10 Articles by Relevance</h2>
+  <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">100% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2201.12150v2" target="_blank" rel="noopener">Learning Curves for Decision Making in Supervised Machine Learning: A Survey</a></h3>
+          <p class="meta">
+            By Felix Mohr, Jan N. van Rijn · 28 Jan 2022
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">Learning curves are a concept from social sciences that has been adopted in the context of machine learning to assess the performance of a learning algorithm with respect to a certain resource, e.g., ...</p>
+          <div class="tags"><span class="tag">cs.LG</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:100%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">91% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2304.02381v2" target="_blank" rel="noopener">Physics-Inspired Interpretability Of Machine Learning Models</a></h3>
+          <p class="meta">
+            By Maximilian P Niroomand, David J Wales · 05 Apr 2023
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">The ability to explain decisions made by machine learning models remains one of the most significant hurdles towards widespread adoption of AI in highly sensitive areas such as medicine, cybersecurity...</p>
+          <div class="tags"><span class="tag">cs.LG</span><span class="tag">cs.AI</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:91%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">90% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2306.04338v1" target="_blank" rel="noopener">Changing Data Sources in the Age of Machine Learning for Official Statistics</a></h3>
+          <p class="meta">
+            By Cedric De Boom, Michael Reusens · 07 Jun 2023
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">Data science has become increasingly essential for the production of official statistics, as it enables the automated collection, processing, and analysis of large amounts of data. With such data scie...</p>
+          <div class="tags"><span class="tag">stat.ML</span><span class="tag">cs.LG</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:90%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">Hacker News</span>
+            <span class="score" style="color:#22c55e">90% relevant</span>
+          </div>
+          <h3><a href="https://news.ycombinator.com/item?id=12713056" target="_blank" rel="noopener">Ask HN: How to get started with machine learning?</a></h3>
+          <p class="meta">
+            By georgehdd · 15 Oct 2016
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">How should a software engineer with no machine learning background get started on the subject?
+Do you think that getting started by learning a framework like TensorFlow is a good idea or should I gain...</p>
+          <div class="tags"><span class="tag">tech</span><span class="tag">hacker-news</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:90%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">89% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2303.15563v1" target="_blank" rel="noopener">Privacy-preserving machine learning for healthcare: open challenges and future perspectives</a></h3>
+          <p class="meta">
+            By Alejandro Guerra-Manzanares, L. Julian Lechuga Lopez, Michail Maniatakos · 27 Mar 2023
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">Machine Learning (ML) has recently shown tremendous success in modeling various healthcare prediction tasks, ranging from disease diagnosis and prognosis to patient treatment. Due to the sensitive nat...</p>
+          <div class="tags"><span class="tag">cs.LG</span><span class="tag">cs.CR</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:89%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">87% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2602.11092v2" target="_blank" rel="noopener">MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning</a></h3>
+          <p class="meta">
+            By Cassandre Notton, Benjamin Stott, Philippe Schoeb · 11 Feb 2026
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">Identifying where quantum models may offer practical benefits in near term quantum machine learning (QML) requires moving beyond isolated algorithmic proposals toward systematic and empirical explorat...</p>
+          <div class="tags"><span class="tag">cs.LG</span><span class="tag">cs.PL</span><span class="tag">quant-ph</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:87%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">83% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/1905.04749v2" target="_blank" rel="noopener">A Benchmark Study of Machine Learning Models for Online Fake News Detection</a></h3>
+          <p class="meta">
+            By Junaed Younus Khan, Md. Tawkat Islam Khondaker, Sadia Afroz · 12 May 2019
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">The proliferation of fake news and its propagation on social media has become a major concern due to its ability to create devastating impacts. Different machine learning approaches have been suggeste...</p>
+          <div class="tags"><span class="tag">cs.CL</span><span class="tag">cs.IR</span><span class="tag">cs.LG</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:83%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#22c55e">71% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/2302.08893v4" target="_blank" rel="noopener">Active learning for data streams: a survey</a></h3>
+          <p class="meta">
+            By Davide Cacciarelli, Murat Kulahci · 17 Feb 2023
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">Online active learning is a paradigm in machine learning that aims to select the most informative data points to label from a data stream. The problem of minimizing the cost associated with collecting...</p>
+          <div class="tags"><span class="tag">stat.ML</span><span class="tag">cs.LG</span><span class="tag">stat.ME</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:71%; background:#22c55e"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#f59e0b">62% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/1705.05172v1" target="_blank" rel="noopener">Emotion in Reinforcement Learning Agents and Robots: A Survey</a></h3>
+          <p class="meta">
+            By Thomas M. Moerland, Joost Broekens, Catholijn M. Jonker · 15 May 2017
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">This article provides the first survey of computational models of emotion in reinforcement learning (RL) agents. The survey focuses on agent/robot emotions, and mostly ignores human user emotions. Emo...</p>
+          <div class="tags"><span class="tag">cs.LG</span><span class="tag">cs.AI</span><span class="tag">cs.HC</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:62%; background:#f59e0b"></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="source-label">arXiv</span>
+            <span class="score" style="color:#f59e0b">58% relevant</span>
+          </div>
+          <h3><a href="http://arxiv.org/abs/1812.09225v4" target="_blank" rel="noopener">Learning Representations from Dendrograms</a></h3>
+          <p class="meta">
+            By Morteza Haghir Chehreghani, Mostafa Haghir Chehreghani · 21 Dec 2018
+             · keyword: <em>machine learning</em>
+          </p>
+          <p class="summary">We propose unsupervised representation learning and feature extraction from dendrograms. The commonly used Minimax distance measures correspond to building a dendrogram with single linkage criterion, ...</p>
+          <div class="tags"><span class="tag">cs.LG</span><span class="tag">stat.ML</span></div>
+          <div class="relevance-bar">
+            <div class="relevance-fill" style="width:58%; background:#f59e0b"></div>
+          </div>
+        </div>
+        </div>
+
+  <h2>📋 Full Results Table</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Title</th><th>Source</th><th>Keyword</th><th>Published</th><th>Author</th><th>Relevance</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2201.12150v2" target="_blank">Learning Curves for Decision Making in Supervised Machine Learning: A Survey</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>28 Jan 2022</td>
+          <td>Felix Mohr, Jan N. van Rijn</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2304.02381v2" target="_blank">Physics-Inspired Interpretability Of Machine Learning Models</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>05 Apr 2023</td>
+          <td>Maximilian P Niroomand, David J Wales</td>
+          <td>91%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2306.04338v1" target="_blank">Changing Data Sources in the Age of Machine Learning for Official Statistics</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>07 Jun 2023</td>
+          <td>Cedric De Boom, Michael Reusens</td>
+          <td>90%</td>
+        </tr>
+        <tr>
+          <td><a href="https://news.ycombinator.com/item?id=12713056" target="_blank">Ask HN: How to get started with machine learning?</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>15 Oct 2016</td>
+          <td>georgehdd</td>
+          <td>90%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2303.15563v1" target="_blank">Privacy-preserving machine learning for healthcare: open challenges and future p</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>27 Mar 2023</td>
+          <td>Alejandro Guerra-Manzanares, L. Julian L</td>
+          <td>89%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2602.11092v2" target="_blank">MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>11 Feb 2026</td>
+          <td>Cassandre Notton, Benjamin Stott, Philip</td>
+          <td>87%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/1905.04749v2" target="_blank">A Benchmark Study of Machine Learning Models for Online Fake News Detection</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>12 May 2019</td>
+          <td>Junaed Younus Khan, Md. Tawkat Islam Kho</td>
+          <td>83%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/2302.08893v4" target="_blank">Active learning for data streams: a survey</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>17 Feb 2023</td>
+          <td>Davide Cacciarelli, Murat Kulahci</td>
+          <td>71%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/1705.05172v1" target="_blank">Emotion in Reinforcement Learning Agents and Robots: A Survey</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>15 May 2017</td>
+          <td>Thomas M. Moerland, Joost Broekens, Cath</td>
+          <td>62%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/1812.09225v4" target="_blank">Learning Representations from Dendrograms</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>21 Dec 2018</td>
+          <td>Morteza Haghir Chehreghani, Mostafa Hagh</td>
+          <td>58%</td>
+        </tr>
+        <tr>
+          <td><a href="http://arxiv.org/abs/1904.13223v3" target="_blank">Unsupervised Representation Learning with Minimax Distance Measures</a></td>
+          <td>arXiv</td>
+          <td>machine learning</td>
+          <td>27 Apr 2019</td>
+          <td>Morteza Haghir Chehreghani</td>
+          <td>54%</td>
+        </tr>
+        <tr>
+          <td><a href="https://developers.google.com/machine-learning/crash-course/" target="_blank">Machine Learning Crash Course</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>01 Mar 2018</td>
+          <td>matant</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://docs.google.com/presentation/d/1kSuQyW5DTnkVaZEjGYCkfOxvzCqGEFzWBy4e9Uedd9k/preview?imm_mid=0f9b7e&cmp=em-data-na-na-newsltr_20171213&slide=id.g183f28bdc3_0_90" target="_blank">Machine Learning 101 slidedeck: 2 years of headbanging, so you don't have to</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>14 Dec 2017</td>
+          <td>flor1s</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.macrumors.com/2022/05/07/apple-director-of-machine-learning-resigns/" target="_blank">Apple's director of machine learning resigns due to return to office work</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>07 May 2022</td>
+          <td>carlycue</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="http://distill.pub/about/" target="_blank">Distill: a modern machine learning journal</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>20 Mar 2017</td>
+          <td>jasikpark</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="http://www.cis.upenn.edu/~jean/math-basics.pdf" target="_blank">Math Basics for Computer Science and Machine Learning [pdf]</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>30 Jul 2019</td>
+          <td>oldgun</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://cloudplatform.googleblog.com/2016/05/Google-supercharges-machine-learning-tasks-with-custom-chip.html" target="_blank">Google supercharges machine learning tasks with TPU custom chip</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>18 May 2016</td>
+          <td>hurrycane</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://eugeneyan.com/writing/first-rule-of-ml/" target="_blank">The First Rule of Machine Learning: Start Without Machine Learning</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>22 Sep 2021</td>
+          <td>7d7n</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/" target="_blank">The State of Machine Learning Frameworks</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>10 Oct 2019</td>
+          <td>hughzhang</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><a href="https://dl.acm.org/doi/pdf/10.1145/358027.358047" target="_blank">The Chaostron: An Important Advance in Learning Machines (1961)</a></td>
+          <td>Hacker News</td>
+          <td>machine learning</td>
+          <td>15 Oct 2022</td>
+          <td>abrax3141</td>
+          <td>30%</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <footer>
+    News Intelligence Scraper &nbsp;·&nbsp; Built with Python, requests &amp; BeautifulSoup
+  </footer>
+</body>
+</html>
